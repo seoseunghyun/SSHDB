@@ -5,7 +5,7 @@ SSHDB by SeungHyun Seo is licensed under a Creative Commons Attribution 3.0 Unpo
 
 **You are free:
 
-  to Share — to copy, distribute and transmit the work
+	to Share — to copy, distribute and transmit the work
 	to Remix — to adapt the work
 	to make commercial use of the work
 	
