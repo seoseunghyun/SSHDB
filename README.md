@@ -1,3 +1,4 @@
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/c2b1754ad5eea295807350010f122ece "githalytics.com")](http://githalytics.com/seoseunghyun/SSHDB)
 <h1>License / 저작권</h1>
 <h2>English</h2>
 SSHDB by SeungHyun Seo is licensed under a Creative Commons Attribution 3.0 Unported License. Based on a work at http://sshdb.seoseunghyun.com/.
