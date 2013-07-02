@@ -10,11 +10,17 @@ if(file_exists($sshdb_token_fdir) && filesize($sshdb_token_fdir)>0){
 	fclose($sshdb_token_read_fopen);
 	define('SSHDB_TOKEN', $sshdb_token_read_fcontent);
 }else{
+$sshdb_token_perm_array = array('707','757','777');
+$sshdb_token_data_perm = fileperms( SSHDB_DIR.'data/');$sshdb_token_data_permi = $sshdb_token_data_perm - 16384;
+$sshdb_token_data_permiss = decoct($sshdb_token_data_permi);
+if(in_array($sshdb_token_data_permiss,$sshdb_token_perm_array)){
 	$sshdb_token_write_fopen = fopen($sshdb_token_fdir, 'w');
 	$sshdb_token_write_content = md5(uniqid(rand(),true));
 	fwrite($sshdb_token_write_fopen,$sshdb_token_write_content);
 	fclose($sshdb_token_write_fopen);
 	define('SSHDB_TOKEN', $sshdb_token_write_content);
+}
+define('SSHDB_TOKEN', 'GUEST');
 }
 $sshdb_set_read_fdir = SSHDB_DIR.'data/sign/owner.set.sshdb.php';
 
