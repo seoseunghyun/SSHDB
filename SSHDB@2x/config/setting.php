@@ -14,13 +14,22 @@ $sshdb_token_perm_array = array('707','757','777');
 $sshdb_token_data_perm = fileperms( SSHDB_DIR.'data/');$sshdb_token_data_permi = $sshdb_token_data_perm - 16384;
 $sshdb_token_data_permiss = decoct($sshdb_token_data_permi);
 if(in_array($sshdb_token_data_permiss,$sshdb_token_perm_array)){
+	$data_files = array('','storage','sign','log');
+	$data_files_count = count($data_files);
+	for($i=0;$i<$data_files_count;$i++){
+		if(!is_dir(SSHDB_DIR.'data/'.$data_files[$i])){
+			mkdir(SSHDB_DIR.'data/'.$data_files[$i], 0777);
+			chmod(SSHDB_DIR.'data/'.$data_files[$i], 0777);
+		}
+	}
 	$sshdb_token_write_fopen = fopen($sshdb_token_fdir, 'w');
 	$sshdb_token_write_content = md5(uniqid(rand(),true));
 	fwrite($sshdb_token_write_fopen,$sshdb_token_write_content);
 	fclose($sshdb_token_write_fopen);
 	define('SSHDB_TOKEN', $sshdb_token_write_content);
-}
+}else{
 define('SSHDB_TOKEN', 'GUEST');
+}
 }
 $sshdb_set_read_fdir = SSHDB_DIR.'data/sign/owner.set.sshdb.php';
 
