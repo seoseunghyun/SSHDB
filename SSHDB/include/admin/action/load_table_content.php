@@ -47,15 +47,15 @@ if($_GET['search'] && $_GET['attr'] == $keys){
 <div id="content_tb_table_<?=$value['id']?>" class="content_tb_table content_tb_table_<?=$value['id']?> content content_tb_bgcolor_<?=$tb_bgcolor?>" alt="<?=$keys?>"><?
 if(mb_strlen($values) > 15){
 			if($value_search_on=='on'){
-				echo str_replace($_GET['search'], '<font color="#278aef">'.$_GET['search'].'</font>',  mb_substr($values,0,15));
+				echo str_replace($_GET['search'], '<font color="#278aef">'.$_GET['search'].'</font>',  htmlspecialchars(mb_substr($values,0,15,'UTF-8')));
 			}else{
-				echo mb_substr($values,0,15);	
+				echo htmlspecialchars(mb_substr($values,0,15,'UTF-8'));	
 			}
 }else{
 			if($value_search_on=='on'){
-				echo str_replace($_GET['search'], '<font color="#278aef">'.$_GET['search'].'</font>',  $values);
+				echo str_replace($_GET['search'], '<font color="#278aef">'.$_GET['search'].'</font>',  htmlspecialchars($values));
 			}else{
-				echo $values;	
+				echo htmlspecialchars($values);	
 			}
 }
 ?></div>
