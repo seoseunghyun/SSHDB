@@ -1,2 +1,0 @@
-RewriteEngine On
-RedirectMatch /(.*)$ http://sshdb.seoseunghyun.com/report/hacking
