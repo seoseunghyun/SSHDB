@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{margin: 0 auto; text-align: center;font-family: "맑은 고딕", Tahoma, "돋움"; color: #575757;}
+a:link{text-decoration:none;color:#575757}
+a:visited{text-decoration:none;color:#575757}
+a:hover{text-decoration:none;color:#575757}
+
+#header_wrap{margin: 0 auto; width: 280px; position: relative; height: 150px; }
+#container_wrap{margin: 0 auto;width: 280px; position: relative; height: 280px;}
+#content_wrap{margin: 0 auto;width: 280px; position: relative; height: 280px;}
+
+
+#logo_wrap{margin: 0 auto;width: 280px; position: relative; height: 50px; float: left; text-align:right; text-align: center}
+#intro_wrap{margin: 0 auto;width: 280px; position: relative; height: 50px;  float: left;text-align:right;text-align: center; font-size: 13px; color: #686868;}
+.content_wrap{margin: 0 auto;width: 280px; position: relative; height: 200px; float: left; text-align:right;text-align: left; font-size: 13px;}
+#btn_wrap{margin: 0 auto;width: 280px; position: relative; height: 40px; float: left; text-align:right;text-align: center;}
+.btn_next{cursor: pointer;}
+#btn_next_1{display: none;}
+.check_0{margin: 0 auto; float: left;width:23px; height: 23px;position: relative; background-image: url('../img/check.gif'); background-size: 69px 23px; border: 0 none; }
+.descript{margin: 0 auto; float: left;width:257px; height: 20px;position: relative; margin-top:3px; display: inline; }
+
+#cw_2{display: none; text-align: center; font-size: 12px;}
+#cw_3{display: none; text-align: center; font-size: 13px; color: #909090; height: 120px;}
+#cw_4{display: none; text-align: center; font-size: 12px; color: #909090; height: 220px;}
+input{border: 0 none; border-bottom: 1px solid #a7a7a7; outline: none;width: 150px; color: #909090;}
