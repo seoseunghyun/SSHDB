@@ -78,7 +78,9 @@ function sshdb_fopen_w($dir,$content){
 	$fdir = $dir;
 	$fopen = fopen($fdir, 'w');
 	$secure = '<?php exit;?>';
+	flock($fopen, LOCK_EX);
 	fwrite($fopen,$secure.SSHDB_EXPLODE_SECURE.$content);
+	flock($fopen, LOCK_UN);
 	fclose($fopen);
 	sshdb_push_log(2,'File IO [W]',$dir,'__WRITE__');
 }
@@ -302,7 +304,7 @@ function sshdb_select_db($db){
 	global $sshdb_msg,$sshdb_selector;
 	$sshdb_selector['db']=$db;
 }
-	
+
 //!LINK Function
 function sshdb_create_link($db,$tag,$dir){
 	global $sshdb_msg;	
@@ -326,9 +328,9 @@ function sshdb_get_link($db){
 	global $sshdb_msg,$sshdb_get;	
 	include (SSHDB_DIR.'core/action/get_link.php');
 	if(isset($sshdb_msg_inc)){
-	sshdb_push_log(0,'gLINK',$db.'('.$dir.')',$sshdb_msg_inc);
+	sshdb_push_log(0,'gLINK',$db,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'gLINK',$db.'('.$dir.')','dir :'.$sshdb_get);
+	sshdb_push_log(4,'gLINK',$db,'dir :'.$sshdb_get);
 	return $sshdb_msg = 56;
 }
 	
@@ -581,14 +583,15 @@ function sshdb_parser_log($attr_no,$action,$path,$val,$time,$ip){
 }
 
 //!Export Function
-function sshdb_export_xml($db,$table,$attr,$ele){
-	global $sshdb_msg,$sshdb_get;
-	include (SSHDB_DIR.'core/action/get_ele.php');
+function sshdb_export_xml($db,$table){
+	global $sshdb_msg;
+	include (SSHDB_DIR.'core/action/export_xml.php');
 	if(isset($sshdb_msg_inc)){
-	sshdb_push_log(0,'gELE',$db.'->'.$table.'->'.$ele,$sshdb_msg_inc);
+	sshdb_push_log(3,'exXML',$db.'->'.$table,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'gELE',$db.'->'.$table.'->'.$ele,$attr.' : '.$sshdb_get);
-	return $sshdb_msg = 20;
+	sshdb_push_log(4,'exXML',$db.'->'.$table,'export XML');
+	return $sshdb_export;
+	$sshdb_msg = 99;
 
 }
 

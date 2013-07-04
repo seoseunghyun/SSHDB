@@ -48,13 +48,27 @@ if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
 	</div>
 	</div>
 	<div id="menu_log" class="presol_css"><img src="<?=SSHDBS_URL?>img/menu_log_txt.gif" width="66" height="48" class="presol" alt="SSHDB" /><img id="menu_log_btn" src="<?=SSHDBS_URL?>img/menu_flip_on.gif" width="38" height="48" class="presol menu_display_status_<?=SSHDB_LOG?>" alt="Log ON" /></div>
+	<div id="menu_log_view" class="presol_css"><img id="hide_log_btn" src="<?=SSHDBS_URL?>img/hide_log.gif" width="15" height="24" class="presol" alt="Log Hide" /></div>
 </div>
 </div>
 <div id="menu_bin_right"></div>
 </div>
 
 
-
+<div id="view_log_wrap">
+<div id="view_log_list"></div>
+<div id="view_log_options">
+	<div id="view_log_opt">
+	<div id="log_check_error" class="ssh_check presol_css log_check" alt="error"></div><div class="log_check_b">error</div><br />
+	<div id="log_check_connect" class="ssh_check presol_css log_check" alt="connect"></div><div class="log_check_b">connect</div><br />
+	<div id="log_check_modify" class="ssh_check presol_css log_check" alt="modify"></div><div class="log_check_b">modify</div><br />
+	<div id="log_check_view" class="ssh_check presol_css log_check" alt="view"></div><div class="log_check_b">view</div><br />
+	<div id="log_check_msg" class="ssh_check presol_css log_check" alt="msg"></div><div class="log_check_b">msg</div><br />
+	</div>
+</div>
+<div id="view_log_content"><div id="view_log_cont"></div>
+</div>
+</div>
 <div class="boundary_1"></div>
 <div id="container_wrap">
 <div id="container">
@@ -116,6 +130,20 @@ if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
 		
 		</div>
 		
+		
+		<div id="content_db" class="content_wrap content_db">
+		<div id="content_db_header"></div>
+		<div id="content_db_info">
+			<div id="db_info_title" class="content_title"><img src="<?=SSHDBS_URL?>img/content_di_title.gif" class="presol" width="280" height="26" alt="Information Of Database" /></div>
+			<div id="db_info_content"><br />
+				<span id="db_info_load" class="span_no"></span>
+				<br /><br />
+			</div>
+		</div>
+		</div>
+		
+		
+		
 		<div id="content_tb" class="content_wrap content_tb">
 		<div id="content_tb_hide"></div>
 		<div id="content_tb_header"></div>
@@ -160,7 +188,7 @@ if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
 		</div>
 		
 		
-		<div id="ts_tb_tool"><span id="dele_btn">Delete</span></div>
+		<div id="ts_tb_tool"><span id="dele_btn">Delete</span>&nbsp;&nbsp;<span id="xml_btn">View XML</span></div>
 		<div id="content_tb_wrap" class="content_tb">
 		<div id="content_tb_title_wrap" class="content_tb"></div>
 		<div id="content_tb_table_wrap" class="content_tb"></div>

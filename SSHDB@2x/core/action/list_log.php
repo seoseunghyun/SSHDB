@@ -1,7 +1,7 @@
 <?
 //SSHDB
 $log_dir = SSHDB_DIR.'data/log/';
-$sshdb_get['#log']['list'] = array();
+$sshdb_get['$log']['list'] = array();
 	$dirs = dir($log_dir);
 	while(false !== ($entry = $dirs->read())){
 		if( ($entry!='.') && ($entry!='..') &&($entry!='.DS_Store')){

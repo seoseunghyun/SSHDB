@@ -104,7 +104,7 @@ function sshdb_parser_msg($sshdb_msg){
 			case 96 : $msg = '검색 결과 해당 값은 존재하지 않습니다.';break;
 			case 97 : $msg = '해당 세팅 값은 존재하지 않습니다.';break;
 			case 98 : $msg = '세팅 값을 수정했습니다.';break;
-			case 99 : $msg = '';break;
+			case 99 : $msg = '해당 테이블을 XML 형식으로 출력했습니다.';break;
 			case 100 : $msg = '';break;
 			case 101 : $msg = '';break;
 

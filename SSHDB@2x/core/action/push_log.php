@@ -20,8 +20,13 @@ if(!is_dir($log_dir)){
 	chmod($log_dir,0777);
 }
 $log_attr_dir = $log_dir.$attr.'.log.sshdb.php';
-
-$log_content = $attr_no.SSHDB_EXPLODE2.$action.SSHDB_EXPLODE2.$path.SSHDB_EXPLODE2.substr($val,0,$log_array[6]).SSHDB_EXPLODE2.date('YmdHis',time()).SSHDB_EXPLODE2.$_SERVER['REMOTE_ADDR'];
+$log_val_parse = $val;
+if(is_array($val)){
+	$log_val_parse = $val;
+}else{
+	$log_val_parse = substr($val,0,$log_array[6]);
+}
+$log_content = $attr_no.SSHDB_EXPLODE2.$action.SSHDB_EXPLODE2.$path.SSHDB_EXPLODE2.$log_val_parse.SSHDB_EXPLODE2.date('YmdHis',time()).SSHDB_EXPLODE2.$_SERVER['REMOTE_ADDR'];
 if(!file_exists($log_attr_dir)){
 	sshdb_fopen_w($log_attr_dir,$log_content);
 }else{
