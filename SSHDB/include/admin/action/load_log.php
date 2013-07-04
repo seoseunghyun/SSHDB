@@ -3,11 +3,15 @@ include('../lib/set.php');
 $log=$_GET['log'];
 $attr=$_GET['attr'];
 if(!$log){echo '로그를 선택하세요.';return false;}
-if(!$attr){echo '로그 속성을 선택하세요.';return false;}
+if(!$attr==','){echo '로그 속성을 선택하세요.';return false;}
 $attr_array = explode(',', $attr);
 $attr_array_count = count($attr_array);
 for($i=1;$i<$attr_array_count;$i++){
-	foreach(sshdb_print_log($log,$attr_array[$i]) as $key => $val){
+$now_array = sshdb_print_log($log,$attr_array[$i]);
+if(count($now_array)>50){
+	array_splice($now_array, -50,50);
+}
+	foreach($now_array as $key => $val){
 		$nc = explode('_',$val);
 		$nc[0] = str_replace('#', '', $nc[0]);
 		$content_t = implode('_',$nc);
