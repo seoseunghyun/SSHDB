@@ -28,9 +28,7 @@ input {border: 0px none; background :none; outline: none; font-size: 13px; width
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#input_id').focus();
-	if( 'devicePixelRatio' in window && window.devicePixelRatio == 2 ){
-		$('.presol').each(function(){$(this).attr('src',$(this).attr('src').replace('.', '@2x.'));});
-	}
+
 	$('#btn_submit').click(function(){
 		$.ajax({
 			type: 'POST',
