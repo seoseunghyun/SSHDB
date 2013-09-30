@@ -23,7 +23,7 @@ span{cursor: pointer;}
 #menu_content{margin: 12px auto; display: inline; float: left; position: relative; width: 884px; height: 48px; text-align: left; font-size: 14px;}
 #menu_first{margin: 0 auto; float: left; position: relative; width: 199px; height: 48px;}
 #menu_btn_home_wrap{margin: 0 auto; float: left; position: relative; width: 49px; height: 48px;background: url('../img/menu_btn_home_.gif');}
-#menu_btn_user_wrap{margin: 0 auto; float: left; position: relative; width: 49px; height: 48px;background: url('../img/menu_btn_user_.gif');}
+#menu_btn_account_wrap{margin: 0 auto; float: left; position: relative; width: 49px; height: 48px;background: url('../img/menu_btn_user_.gif');}
 #menu_btn_view_wrap{margin: 0 auto; float: left; position: relative; width: 49px; height: 48px;background: url('../img/menu_btn_view_.gif');}
 #menu_btn_guroomz_wrap{margin: 0 auto; float: left; position: relative; width: 49px; height: 48px;background: url('../img/menu_btn_guroomz_.gif');}
 .menu_btn_wrap{cursor: pointer;}
@@ -158,6 +158,14 @@ span{cursor: pointer;}
 .home_ana_rg_ele{width: 20px; height: 90px; left: 25px; top: 30px; background: #ec9e39; font-size: 0; position:absolute;}
 #home_ana_rg_subtitle{float: left; width: 600px; height: 35px;  position: relative;}
 .home_ana_rg_subtitle_ele{width: 70px; height: 35px; border-right: dotted 1px #c7c7c7; font-size: 12px; text-align: center; float: left; position: relative;}
+
+
+#content_account{margin: 0 auto; float: left; position: relative; width: 725px; display: none;}
+#account_info_title{ display: inline; margin-top: 15px; float: left; position: relative; width: 725px;}
+#account_info_content{ display: inline; color: #9c9c9c; font-size: 13px; float: left; position: relative; width: 725px;}
+#account_modify_content{ display: inline; color:#363636; font-size: 13px; float: left; position: relative; width: 725px;}
+.account_modify_input {width: 200px; border: 1px solid silver; outline: none;}
+#account_modify_btn {width: 90px; height: 25px; background: #505050; color: white; border: none; cursor: pointer; }
 
 #content_tb{margin: 0 auto; float: left; position: relative; width: 725px; display: none;}
 

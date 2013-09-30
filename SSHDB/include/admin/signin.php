@@ -20,7 +20,7 @@ body{margin: 0 auto; text-align: center;font-family: "맑은 고딕", Tahoma, "�
 #content_bl{top:0;left: 0}
 #content_br{top:0;left: 239px}
 
-input {border: 0px none; background :none; outline: none; font-size: 13px; width: 100px; color: #d3d3d3;}
+input {border: 0px none; background :none; outline: none; font-size: 13px; width: 95px; color: #d3d3d3;}
 
 #info{margin: 0 auto; float: left; width: 189px; height: 87px;}
 #btn_submit {cursor: pointer;}
@@ -28,6 +28,9 @@ input {border: 0px none; background :none; outline: none; font-size: 13px; width
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#input_id').focus();
+	if( 'devicePixelRatio' in window && window.devicePixelRatio == 2 ){
+		$('.presol').each(function(){$(this).attr('src',$(this).attr('src').replace('.', '@2x.'));});
+	}
 	$('#btn_submit').click(function(){
 		$.ajax({
 			type: 'POST',

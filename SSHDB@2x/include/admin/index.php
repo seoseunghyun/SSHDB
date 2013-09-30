@@ -37,7 +37,7 @@ if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
 <div id="menu_bin_left"></div>
 <div id="menu_content">
 <div id="menu_first"><div id="menu_btn_home_wrap" class="menu_btn_wrap">
-<img id="menu_btn_home" src="<?=SSHDBS_URL?>img/menu_btn_home.gif" width="49" height="48" alt="HOME" class="menu_btn" /></div><div id="menu_btn_user_wrap" class="menu_btn_wrap"><img id="menu_btn_user" src="<?=SSHDBS_URL?>img/menu_btn_user.gif" width="49" height="48" alt="USER" class="menu_btn" /></div><div id="menu_btn_view_wrap" class="menu_btn_wrap"><img id="menu_btn_view" src="<?=SSHDBS_URL?>img/menu_btn_view.gif" width="49" height="48" alt="VIEW" class="menu_btn" /></div><div id="menu_btn_guroomz_wrap" class="menu_btn_wrap"><img id="menu_btn_guroomz" src="<?=SSHDBS_URL?>img/menu_btn_guroomz.gif" width="49" height="48" alt="GUROOMZ" class="menu_btn" /></div>
+<img id="menu_btn_home" src="<?=SSHDBS_URL?>img/menu_btn_home.gif" width="49" height="48" alt="HOME" class="menu_btn" /></div><div id="menu_btn_account_wrap" class="menu_btn_wrap"><img id="menu_btn_account" src="<?=SSHDBS_URL?>img/menu_btn_user.gif" width="49" height="48" alt="USER" class="menu_btn" /></div><div id="menu_btn_view_wrap" class="menu_btn_wrap"><img id="menu_btn_view" src="<?=SSHDBS_URL?>img/menu_btn_view.gif" width="49" height="48" alt="VIEW" class="menu_btn" /></div><div id="menu_btn_guroomz_wrap" class="menu_btn_wrap"><img id="menu_btn_guroomz" src="<?=SSHDBS_URL?>img/menu_btn_guroomz.gif" width="49" height="48" alt="GUROOMZ" class="menu_btn" /></div>
 </div>
 <div id="menu_middle"></div>
 <div id="menu_last">
@@ -126,10 +126,24 @@ if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
 			Loading...
 			</div>
 		</div>
-		
-		
 		</div>
 		
+		
+		
+		<div id="content_account" class="content_wrap content_account">		
+		<div id="content_account_info">
+			<div id="account_info_title" class="content_title"><img src="<?=SSHDBS_URL?>img/account_info_title.gif" class="presol" width="386" height="26" alt="Information Of Administrator" /></div>
+			<div id="account_info_content"><br />
+				- <strong style="color:#45b0e8">Administrator</strong> : <?=$_SESSION[SSHDB_TOKEN]['sshdb_id']?><br />
+				- <strong style="color:#e86ee4">SSHDB Token</strong> : <?=SSHDB_TOKEN?><br /><br />
+			</div>
+			<div id="account_modify_title" class="content_title"><img src="<?=SSHDBS_URL?>img/account_modify_title.gif" class="presol" width="290" height="26" alt="Modify Of Account Key" /></div>
+			<div id="account_modify_content"><br />
+				- <strong>Modify ID</strong> : <input id="account_modify_id" value="<?=$_SESSION[SSHDB_TOKEN]['sshdb_id']?>" class="account_modify_input" /><br />
+				- <strong>Modify Password</strong> :<input id="account_modify_password" type="password" value="" class="account_modify_input" /><br /><font color="#e66b9a">&nbsp;&nbsp;&nbsp;* Key를 바꾸시면, 현재 데이터베이스 관리자 페이지는 다시 새로고침 합니다.</font><br /><br /><br /><button id="account_modify_btn">Modify</button>
+			</div>
+		</div>
+		</div>
 		
 		<div id="content_db" class="content_wrap content_db">
 		<div id="content_db_header"></div>
