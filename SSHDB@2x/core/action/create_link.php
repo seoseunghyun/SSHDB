@@ -21,7 +21,7 @@ for($j=0;$j<$dbs_count;$j++){
 	$db_dir = SSHDB_DIR.'data/storage/'.sshdb_hash($dbs[$j]).'/info.db.sshdb.php';
 	$link_dir = SSHDB_DIR.'data/storage/'.sshdb_hash($dbs[$j]).'/link.db.sshdb.php';
 	if(file_exists($db_dir)){return $sshdb_msg_inc = 52;}
-	if(!file_exists($dirs[$j])){return $sshdb_msg_inc = 47;}
+	if(!file_exists($dirs[$j]) || is_dir($dirs[$j]){return $sshdb_msg_inc = 47;}
 	$link_perm = fileperms($dirs[$j]);$link_permi = $link_perm - 16384;
 	$link_permiss = decoct($link_permi);
 	if(!in_array($link_permiss,sshdb_array('link_permission'))){return $sshdb_msg_inc = 49;}

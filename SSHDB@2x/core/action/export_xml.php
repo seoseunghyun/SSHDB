@@ -35,7 +35,7 @@ $db_split = explode(SSHDB_EXPLODE1,$table_split[0]);
 $db_id = $db_split[0];
 $xmlResponse = '<?xml version="1.0" encoding="UTF-8" ?>
 ';
-$xmlResponse .= '<'.$db_id.'>
+$xmlResponse .= '<table id="'.$db_id.'">
 ';
 
 array_splice($sshdb_print, 0,1);
@@ -43,9 +43,9 @@ foreach($sshdb_print as $key => $val){
 	foreach($val as $keys => $vals){
 	$vals = htmlspecialchars($vals);
 	if($keys=='id'){
-	$xmlResponse .= '<'.$vals.'>
+	$xmlResponse .= '<element id="'.$vals.'">
 ';
-	$xmlends = '</'.$vals.'>
+	$xmlends = '</element>
 ';
 	}else{
 	$xmlResponse .= '	<'.$keys.'>'.$vals.'</'.$keys.'>
@@ -56,6 +56,6 @@ foreach($sshdb_print as $key => $val){
 
 ';
 }
-$xmlResponse .= '</'.$db_id.'>';
+$xmlResponse .= '</table>';
 $sshdb_export = $xmlResponse;
 ?>

@@ -1,6 +1,6 @@
 <?
 //SSHDB
-define('SSHDB_VER','0.13b');
+define('SSHDB_VER','0.14b');
 define('SSHDB_DIR',str_replace('config\\','', str_replace('config/','',str_replace(basename(__FILE__),'',__FILE__))));
 
 $sshdb_token_fdir = SSHDB_DIR.'data/sign/owner.token.sshdb.php';
