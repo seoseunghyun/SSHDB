@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$db){return $sshdb_msg_inc = 6;}
 if(!$table){return $sshdb_msg_inc = 21;}

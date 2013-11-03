@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$id){return $sshdb_msg_inc = 81;}
 if(!$password){return $sshdb_msg_inc = 82;}

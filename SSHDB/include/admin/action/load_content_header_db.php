@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 $db =$_GET['db'];
 sshdb_get_db($db,'');

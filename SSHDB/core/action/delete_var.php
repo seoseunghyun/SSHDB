@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$var){return $sshdb_msg_inc = 33;}
 

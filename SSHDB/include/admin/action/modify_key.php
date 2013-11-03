@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 if(sshdb_modify_key($_POST['id'],$_POST['password'])==80){
 	echo 80;

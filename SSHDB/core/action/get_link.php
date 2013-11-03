@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 $db_dir = SSHDB_DIR.'data/storage/'.sshdb_hash($db).'/';
 $link_dir = $db_dir.'link.db.sshdb.php';

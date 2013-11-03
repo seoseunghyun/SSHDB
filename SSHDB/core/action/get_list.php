@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!is_array($ele)){$eles = explode(',',$ele);}else{$eles=$ele;}$eles_count = count($eles);
 if(!is_array($attr)){$attrs = explode(',',$attr);}else{$attrs=$attr;}$attrs_count = count($attrs);

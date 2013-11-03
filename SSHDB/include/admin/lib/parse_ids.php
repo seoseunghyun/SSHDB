@@ -1,4 +1,4 @@
-<?
+<?php
 function parse_tb($val,$del_len){
 $array = explode('_', $val);
 $db_len = $array[$del_len-2];

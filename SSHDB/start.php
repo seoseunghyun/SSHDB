@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 global $sshdb_msg;
 require('config/setting.php');

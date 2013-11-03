@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 sshdb_create_ele($_POST['db'],$_POST['tb'],$_POST['ele'],$_POST['tag']);
 if($sshdb_msg==38){

@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 if($_POST['type']=='var'){
 	if($_POST['check']=='off'){

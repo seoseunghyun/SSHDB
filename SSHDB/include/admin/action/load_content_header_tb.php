@@ -1,8 +1,19 @@
-<?
+<?php
+function get_time() {
+    list($usec, $sec) = explode(" ", microtime());
+    return ((float)$usec + (float)$sec);
+}
+ 
+$start = get_time();
 include('../lib/set.php');
+
 $db =$_GET['db'];
 $tb =$_GET['tb'];
+
 sshdb_get_table($db,$tb,'');
+$size_array = sshdb_info_table($db,$tb,'');
+$end = get_time();
+$time = $end - $start;
 ?>
 <div id="content_tb_header_tb">
 	<span id="content_a_title" class="content_edit_toggle">
@@ -31,4 +42,14 @@ sshdb_get_table($db,$tb,'');
 	<?=substr($sshdb_get[$db][$tb]['date'],0,4).'.'.substr($sshdb_get[$db][$tb]['date'],4,2).'.'.substr($sshdb_get[$db][$tb]['date'],6,2).'&nbsp;('.substr($sshdb_get[$db][$tb]['date'],8,2).':'.substr($sshdb_get[$db][$tb]['date'],10,2).':'.substr($sshdb_get[$db][$tb]['date'],12,2).')'?>
 	</font>
 
+</div>
+
+<div id="content_tb_header_root">
+<br />
+<div id="home_info_title" class="content_title"><img src="<?=SSHDBS_URL?>img/content_info_title.gif" class="resol" width="231" height="26" alt="Information Of Table" /></div>
+- <strong style="color:#e89245">Table Real Directory</strong> : <?=SSHDB_DIR?>data/storage/<br />&nbsp;&nbsp;&nbsp;<?=sshdb_hash($db)?>/<br />&nbsp;&nbsp;&nbsp;<strong><?=sshdb_hash($tb)?></strong>/<br /><br />
+- <strong>Table Connection Time</strong> : <font color="#c48cdb"><?=substr($time,0,7)?></font> sec.
+<br />
+- <strong>Total Size</strong> : <font color="#57c9d0"><?=$size_array['size']?></font> (<?=$size_array['dircount']?> Directories, <?=$size_array['count']?> Files)<br /><br />
+<br />
 </div>

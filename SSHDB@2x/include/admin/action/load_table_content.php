@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 
 $db =$_GET['db'];
@@ -29,14 +29,14 @@ if($_GET['align'] !='' && $content){
 }
 ?>
 <div class="content_tb_warp" style="width:<?=45+($count_var*130)?>px;">
-<?
+<?php
 $tb_bgcolor = 0;
 foreach($content as $key => $value){
 if($tb_bgcolor==0){$tb_bgcolor=1;}else{$tb_bgcolor=0;}
 ?>
 <div id="content_tb_selector_wrap_<?=$content[$key]['id']?>" class="content_tb_selector_wrap content_tb_select_0"><img id="content_tb_selector_0_<?=$content[$key]['id']?>" width="20" height="20" src="<?=SSHDBS_URL?>img/table_select_0.gif" class="content_tb_selector_0 content_tb_selector resol" alt="not select" /><img id="content_tb_selector_1_<?=$content[$key]['id']?>" width="20" height="20" src="<?=SSHDBS_URL?>img/table_select_1.gif" class="content_tb_selector_1 content_tb_selector resol" alt="not select" /></div>
 <div class="content_tb_table_side_<?=$content[$key]['id']?> content_tb_table_side  content_tb_table_<?=$value['id']?> content_tb_bgcolor_<?=$tb_bgcolor?>" ></div>
-<?
+<?php
 foreach($value as $keys => $values){
 if($_GET['search'] && $_GET['attr'] == $keys){
 	$value_search_on = 'on';
@@ -44,7 +44,7 @@ if($_GET['search'] && $_GET['attr'] == $keys){
 	$value_search_on = 'off';
 }
 ?>
-<div id="content_tb_table_<?=$value['id']?>" class="content_tb_table content_tb_table_<?=$value['id']?> content content_tb_bgcolor_<?=$tb_bgcolor?>" alt="<?=$keys?>"><?
+<div id="content_tb_table_<?=$value['id']?>" class="content_tb_table content_tb_table_<?=$value['id']?> content content_tb_bgcolor_<?=$tb_bgcolor?>" alt="<?=$keys?>"><?php
 if(mb_strlen($values) > 15){
 			if($value_search_on=='on'){
 				echo str_replace($_GET['search'], '<font color="#278aef">'.$_GET['search'].'</font>',  htmlspecialchars(mb_substr($values,0,15,'UTF-8')));
@@ -59,11 +59,11 @@ if(mb_strlen($values) > 15){
 			}
 }
 ?></div>
-<?
+<?php
 }
 ?>
 <div class="content_tb_table_side content_tb_table_<?=$value['id']?> content_tb_bgcolor_<?=$tb_bgcolor?>" ></div>
-<?
+<?php
 }
 ?>
 </div>

@@ -1,0 +1,125 @@
+#!/bin/sh
+#!/bin/bash
+#!/bin/zsh
+#sshdb
+function start()
+{	
+	if [ -z $1 ]
+	then
+		printf "SSHDB > "	
+		read command
+		start $command;
+	else
+		case $1 in
+		'show')
+		#show databases;
+		db_length=9;
+		i=0;
+		for loopdirectory in `ls -d ../data/storage/*`; do
+		     for datadirectory in `ls $loopdirectory/info.db.sshdb.php`; do 
+		          		db_file=`cat $datadirectory`
+						for db_entire in ${db_file//[[:space:]]/}; 
+						do 
+						    db_entire_real=`echo $db_entire | cut -d $'>' -f2`
+							db_id=`printf $db_entire_real | cut -d $'\x1a' -f1`
+							show_databases[i]="$db_id"
+							if [ "$db_length" -lt "${#db_id}" ]
+							then
+							db_length=${#db_id}
+							fi
+							let i++
+						done
+
+		     done
+		done 
+		
+						printf '+'
+						for (( start_a=0 ; start_a<=$db_length ; start_a++ )) ; do
+						  printf "-"
+						done
+						printf '+'
+						echo
+							printf '| '
+						  printf 'Database'
+						  printf "%"`expr $db_length - 8`"s";
+						  printf '|'
+						echo
+						printf '+'
+						for (( start_a=0 ; start_a<=$db_length ; start_a++ )) ; do
+						  printf "-"
+						done
+						printf '+'
+						
+						for (( content_i=0 ; content_i<=`expr ${#show_databases[*]} - 1` ; content_i++ )) ; do
+							echo
+							printf '| '
+						  printf ${show_databases[$content_i]}
+						  printf "%"`expr $db_length - ${#show_databases[$content_i]}`"s";
+						  printf ' |'
+						done
+						
+								echo 
+						printf '+'
+						for (( start_a=0 ; start_a<=$db_length ; start_a++ )) ; do
+						  printf "-"
+						done
+						printf '+'
+
+		;;
+		'exit')
+			echo "Good Bye $admin_id";
+			exit 0
+		;;
+		*)
+			echo "SSHDB : command not found: $1";
+			start;
+		;;
+		esac;
+		echo
+		start;
+	fi
+	
+}
+
+#Login SSHDB;
+case $1 in
+	'-p' | 'p' | 'password' | '-password')
+		printf "SSHDB Password: "
+		read -s password
+		password_real=`printf $password | md5`
+		file_admin=`sudo cat ../data/sign/owner.key.sshdb.php`
+		for entire in ${file_admin//[[:space:]]/}; 
+		do 
+		    entire_real=`echo $entire | cut -d $'>' -f2`
+		    admin_id=`printf $entire_real | cut -d $'\x1a' -f1`
+		    admin_password=`printf $entire_real | cut -d $'\x1a' -f2`
+		done
+		if [ "$admin_password" = "$password_real" ]
+		then
+		echo
+		echo
+		echo 'Welcome to the SSHDB monitor.'
+		echo 'SSHDB by SeungHyun Seo is licensed under a Creative Commons Attribution 3.0 Unported License.'
+		echo 'Based on a work at http://sshdb.seoseunghyun.com/.'
+		echo
+		echo "This Database user '$admin_id'"
+		echo 'Please enter the command'
+		echo '---------------------------------------------------'
+		else
+		echo "Access denied for user '$admin_id'"
+		exit 0;
+		fi
+
+		echo
+		start
+	;;
+	'version' | '-v' | 'v')
+		echo 'Version : 0.15b'
+		exit 0;
+	;;
+	
+	*)
+		echo '존재하지 않는 명령어입니다.'
+		;;
+		
+esac;

@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 
 include (SSHDB_DIR.'core/parse/sshdb_msg.php');

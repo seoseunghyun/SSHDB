@@ -169,7 +169,7 @@ span{cursor: pointer;}
 
 #content_tb{margin: 0 auto; float: left; position: relative; width: 725px; display: none;}
 
-#content_tb_header{margin: 0 auto; float: left; position: relative; width: 725px; height: 125px;}
+#content_tb_header{margin: 0 auto; float: left; position: relative; width: 725px; height: 275px;}
 #content_tb_header_tb{margin: 0 auto; float: left; position: relative; width: 725px; height: 65px; font-size: 45px;}
 #content_edit_title_input{color: #575757;font-size: 25px; border: 0px none; outline: none;}
 #content_edit_title{display: none;}
@@ -178,6 +178,7 @@ span{cursor: pointer;}
 #content_edit_tag{display: none;}
 
 #content_tb_header_tag{margin: 0 auto; float: left; position: relative; width: 725px; height: 25px; font-size: 18px; color:#f6b825;}
+#content_tb_header_root{margin: 0 auto; float: left; position: relative; width: 725px; height: 120px;  color: #9c9c9c; font-size: 13px;overflow:visible;}
 
 #content_tb_backup{margin: 0 auto; float: left; position: relative; width: 725px; height: 30px; }
 #backup_create_btn{cursor: pointer;}

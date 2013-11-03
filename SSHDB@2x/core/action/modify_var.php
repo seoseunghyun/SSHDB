@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$attr){return $sshdb_msg_inc = 11;}
 if(!$change){return $sshdb_msg_inc = 12;}

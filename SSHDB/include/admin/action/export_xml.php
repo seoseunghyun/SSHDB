@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 $db =$_GET['db'];
 $tb =$_GET['tb'];

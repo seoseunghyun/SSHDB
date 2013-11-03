@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 	
 if(!$db){return $sshdb_msg_inc = 6;}

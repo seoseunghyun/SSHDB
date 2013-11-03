@@ -1,4 +1,4 @@
-<?
+<?php
 if(isset($_SESSION[SSHDB_TOKEN]['sshdb_id'])&&isset($_SESSION[SSHDB_TOKEN]['sshdb_password'])){
 sshdb_dconnect($_SESSION[SSHDB_TOKEN]['sshdb_id'],$_SESSION[SSHDB_TOKEN]['sshdb_password']);
 if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
@@ -11,7 +11,7 @@ if($sshdb_msg!=3){include('signin.php');exit;}}else{include('signin.php');exit;}
 <link rel="stylesheet" type="text/css" charset="UTF-8" href="<?=SSHDBS_URL?>css/style.css" />
 <script type="text/javascript" src="include/common/js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="<?=SSHDBS_URL?>js/default.js"></script>
-<?
+<?php
 //file_get_contents('http://static.seoseunghyun.com/hub/sshdb/ssh/ijoijj8');
 ?>
 </head>

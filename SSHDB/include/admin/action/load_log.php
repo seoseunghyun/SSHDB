@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 $log=$_GET['log'];
 $attr=$_GET['attr'];
@@ -17,7 +17,7 @@ if(count($now_array)>50){
 		$content_t = implode('_',$nc);
 		
 ?>
-<?
+<?php
 $nd = explode(']',$nc[1]);
 $nd[0] = explode('[', str_replace('$', '', $nd[0]));
 switch($nd[0][1]){
@@ -36,7 +36,7 @@ switch($nd[0][1]){
 </font>
 <br /><br />
 
-<?
+<?php
 	}
 }
 ?>

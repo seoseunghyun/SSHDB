@@ -1,6 +1,6 @@
-<?
+<?php
 //SSHDB
-define('SSHDB_VER','0.14b');
+define('SSHDB_VER','0.15b');
 define('SSHDB_DIR',str_replace('config\\','', str_replace('config/','',str_replace(basename(__FILE__),'',__FILE__))));
 
 $sshdb_token_fdir = SSHDB_DIR.'data/sign/owner.token.sshdb.php';
@@ -102,7 +102,7 @@ function sshdb_date(){
 	return date('YmdHis',time());
 }
 function sshdb_hash($val){
-	return hash('sha256', $val);
+	return hash('md5', $val);
 }
 function sshdb_stand_parser($search,$content){
 	return str_replace($search.':', '', stristr(stristr(str_replace(' ', '', $content), $search.':'),';',true));

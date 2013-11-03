@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../../../start.php');
 if(isset($_SESSION[SSHDB_TOKEN]['sshdb_id']) && isset($_SESSION[SSHDB_TOKEN]['sshdb_password']) ){

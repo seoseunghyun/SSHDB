@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!is_array($attr_search)){$attr_searchs = explode(',',$attr_search);}else{$attr_searchs=$attr_search;}$attr_searchs_count = count($attr_searchs);
 if(!is_array($attr_get)){$attr_gets = explode(',',$attr_get);}else{$attr_gets=$attr_get;}$attr_gets_count = count($attr_gets);

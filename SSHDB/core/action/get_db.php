@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 $db_content = sshdb_fopen_r(SSHDB_DIR.'data/storage/'.sshdb_hash($db).'/info.db.sshdb.php');
 if(!file_exists(SSHDB_DIR.'data/storage/'.sshdb_hash($db).'/info.db.sshdb.php')){return $sshdb_msg_inc = 15;}

@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 $db_fdir = sshdb_fdir($db);
 if(is_array($db_fdir)){return $sshdb_msg_inc = $db_fdir[1];}else{$db_dir = $db_fdir;}

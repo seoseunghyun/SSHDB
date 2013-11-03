@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$dir){return $sshdb_msg_inc = 53;}
 if(sshdb_filter_fatal($dir) == 0){return $sshdb_msg_inc = 5;}

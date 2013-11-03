@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 
 $db_fdir = sshdb_fdir($db);

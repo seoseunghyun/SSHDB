@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$attr){return $sshdb_msg_inc = 11;}
 if(!in_array($align_sort,sshdb_array('align_sort'))){return $sshdb_msg_inc = 44;};

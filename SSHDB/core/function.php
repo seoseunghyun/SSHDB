@@ -1,4 +1,4 @@
-<?	
+<?php	
 //SSHDB
 function sshdb_modify_key($id,$password){
 	global $sshdb_msg;	
@@ -521,7 +521,8 @@ function sshdb_print_backup($db,$table,$backup,$stack){
 	return $sshdb_msg = $sshdb_msg_inc;}
 	sshdb_push_log(4,'prBACKUP',$db.'->'.$table.'=>'.$backup,'');
 	
-	return $sshdb_msg = 62;
+	$sshdb_msg = 62;
+	return $sshdb_return;
 	
 }
 function sshdb_delete_backup($db,$table,$backup){

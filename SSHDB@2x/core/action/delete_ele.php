@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$ele){return $sshdb_msg_inc = 41;}
 

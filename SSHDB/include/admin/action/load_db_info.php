@@ -1,4 +1,4 @@
-<?
+<?php
 $db =$_GET['db'];
 function get_time() {
     list($usec, $sec) = explode(" ", microtime());
@@ -17,12 +17,12 @@ $time = $end - $start;
 - <strong>Database Connection Time</strong> : <font color="#c48cdb"><?=substr($time,0,7)?></font> sec.
 <br />
 - <strong>Total Size</strong> : <font color="#57c9d0"><?=$size_array['size']?></font> (<?=$size_array['dircount']?> Directories, <?=$size_array['count']?> Files)<br /><br />
-<?
+<?php
 if(file_exists(SSHDB_DIR.'data/storage/'.sshdb_hash($db).'/link.db.sshdb.php')){
 sshdb_get_link($db);
 ?>
 - <strong><font color="#b7a841">LINK</font> Real Directory</strong> : <?=$sshdb_get[$db]['link']?>
-<?
+<?php
 }
 ?>
 <br />

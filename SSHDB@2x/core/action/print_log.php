@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 //$log_array = sshdb_array('log');
 //if($log_array[0]==0){return;}

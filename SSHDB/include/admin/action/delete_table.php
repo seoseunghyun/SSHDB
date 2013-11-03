@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 include('../lib/parse_ids.php');
 $array = parse_tb(substr($_POST['val'],0,-4),4);

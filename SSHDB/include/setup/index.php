@@ -1,4 +1,4 @@
-<?
+<?php
 
 if(isset($_SESSION[SSHDB_TOKEN]['sshdb_id'])){
 	unset($_SESSION[SSHDB_TOKEN]['sshdb_id'],$_SESSION[SSHDB_TOKEN]['sshdb_password']);
@@ -12,7 +12,7 @@ if(isset($_SESSION[SSHDB_TOKEN]['sshdb_id'])){
 <script type="text/javascript" src="include/common/js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript">
 var sshdb_client_phpversion = <?=substr(PHP_VERSION,0,3)?>;
-	<?
+	<?php
 		$perm_array = array('707','757','777');
 		$perm = fileperms('data/');$permi = $perm - 16384;
 		$permiss = decoct($permi);

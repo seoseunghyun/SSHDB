@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 
 $log_dir = SSHDB_DIR.'data/log/'.$log.'/';

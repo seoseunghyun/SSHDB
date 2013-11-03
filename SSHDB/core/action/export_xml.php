@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 $db_fdir = sshdb_fdir($db);
 if(is_array($db_fdir)){return $sshdb_msg_inc = $db_fdir[1];}else{$db_dir = $db_fdir;}
@@ -33,9 +33,9 @@ for($j=0;$j<$ele_count;$j++){
 }
 $db_split = explode(SSHDB_EXPLODE1,$table_split[0]);
 $db_id = $db_split[0];
-$xmlResponse = '<?xml version="1.0" encoding="UTF-8" ?>
+$xmlResponse = '<?php xml version="1.0" encoding="UTF-8" ?>
 ';
-$xmlResponse .= '<table id="'.$db_id.'">
+$xmlResponse .= '<table id="'.$db_id.'" date="'.$db_split[1].'" tag="'.$db_split[2].'">
 ';
 
 array_splice($sshdb_print, 0,1);

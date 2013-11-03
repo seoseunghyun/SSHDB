@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 $db_fdir = sshdb_fdir($db);
 if(!in_array($attr, sshdb_array('attr_structure'))){return $sshdb_msg_inc = 93;}

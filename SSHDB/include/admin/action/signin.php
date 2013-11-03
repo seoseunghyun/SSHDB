@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 include('../../../start.php');
 sshdb_connect($_POST['id'],$_POST['password']);

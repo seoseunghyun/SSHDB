@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 $db = substr_replace(substr_replace($_POST['val'],'',-4,4),'',0,10);
 sshdb_delete_db($db);

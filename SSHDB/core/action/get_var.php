@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!is_array($attr)){$attrs = explode(',',$attr);}else{$attrs=$attr;}$attrs_count = count($attrs);
 $db_fdir = sshdb_fdir($db);

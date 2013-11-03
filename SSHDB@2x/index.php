@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 session_start();
 include 'start.php';

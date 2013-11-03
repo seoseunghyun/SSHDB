@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 
 function sshdb_parser_msg($sshdb_msg){

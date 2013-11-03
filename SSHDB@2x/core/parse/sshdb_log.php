@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 switch ($attr_no){
 	case 0 : $attr='error';break;

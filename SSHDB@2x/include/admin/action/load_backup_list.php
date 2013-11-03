@@ -1,4 +1,4 @@
-<?
+<?php
 include('../lib/set.php');
 
 $db =$_GET['db'];
@@ -15,7 +15,7 @@ foreach($value as $keys => $values){
 <?=substr($values,0,4).'.'.substr($values,4,2).'.'.substr($values,6,2).'&nbsp;('.substr($values,8,2).':'.substr($values,10,2).':'.substr($values,12,2).')'?></div><div id="backup_list_tool_<?=$values?>" class="backup_list_tool"><span id="backup_btn_push_<?=$values?>" class="backup_btn_push">Push</span>&nbsp;<span id="backup_btn_view_<?=$values?>" class="backup_btn_view">View</span><br /><span id="backup_btn_del_<?=$values?>" class="backup_btn_del">Delete</span></div></div>
 <div class="backup_list_side"><img src="<?=SSHDBS_URL?>img/backup_right.gif" width="10" height="30" class="resol" alt="" /></div>
 </div>
-<?
+<?php
 }
 }
 ?>

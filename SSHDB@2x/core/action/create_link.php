@@ -1,4 +1,4 @@
-<?
+<?php
 //SSHDB
 if(!$db){return $sshdb_msg_inc = 6;}
 if(sshdb_filter_fatal($db.$tag) == 0){return $sshdb_msg_inc = 5;}
