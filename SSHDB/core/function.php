@@ -288,7 +288,8 @@ function sshdb_get_db($db,$attr){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'gDB',$db,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'gDB',$db,$attr.' : '.$sshdb_get);
+	if(is_array($sshdb_get)){$sshdb_log_get='Array()';}else{$sshdb_log_get=$sshdb_get;}
+	sshdb_push_log(4,'gDB',$db,$attr.' : '.$sshdb_log_get);
 	return $sshdb_msg = 20;
 }
 function sshdb_info_db($db){
@@ -368,7 +369,8 @@ function sshdb_get_table($db,$table,$attr){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'gTABLE',$db.'->'.$table,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'gTABLE',$db.'->'.$table,$attr.' : '.$sshdb_get);
+	if(is_array($sshdb_get)){$sshdb_log_get='Array()';}else{$sshdb_log_get=$sshdb_get;}
+	sshdb_push_log(4,'gTABLE',$db.'->'.$table,$attr.' : '.$sshdb_log_get);
 	return $sshdb_msg = 20;
 }
 function sshdb_print_table($db,$table){
@@ -377,7 +379,8 @@ function sshdb_print_table($db,$table){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'pTABLE',$db.'->'.$table,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'pTABLE',$db.'->'.$table,'print : '.$sshdb_print);
+	if(is_array($sshdb_print)){$sshdb_log_print='Array()';}else{$sshdb_log_print=$sshdb_print;}
+	sshdb_push_log(4,'pTABLE',$db.'->'.$table,'print : '.$sshdb_log_print);
 	$sshdb_msg = 94;
 	return $sshdb_print;
 }
@@ -510,7 +513,8 @@ function sshdb_list_backup($db,$table){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'liBACKUP',$db.'->'.$table,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'liBACKUP',$db.'->'.$table,'list : '.$sshdb_get);
+	if(is_array($sshdb_get)){$sshdb_log_get='Array()';}else{$sshdb_log_get=$sshdb_get;}
+	sshdb_push_log(4,'liBACKUP',$db.'->'.$table,'list : '.$sshdb_log_get);
 	return $sshdb_msg = 59;
 }
 function sshdb_print_backup($db,$table,$backup,$stack){
