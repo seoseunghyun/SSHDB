@@ -17,4 +17,5 @@ $sshdb_get[$db][$table]['backup']['list'] = array();
 		}
 	}
 	$dirs->close();
+asort($sshdb_get[$db][$table]['backup']['list']);
 ?>
