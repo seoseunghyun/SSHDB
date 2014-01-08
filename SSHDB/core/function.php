@@ -415,6 +415,7 @@ function sshdb_modify_var($db,$table,$var,$attr,$change){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'mVAL',$db.'->'.$table,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
+	if(is_array($change)){$change='Array()';}
 	sshdb_push_log(4,'mVAL',$db.'->'.$table,$attr.'~>'.$change);
 	return $sshdb_msg = 32;	
 
@@ -461,6 +462,7 @@ function sshdb_modify_ele($db,$table,$ele,$attr,$change){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'mELE',$db.'->'.$table.'->'.$ele,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
+	if(is_array($change)){$change='Array()';}
 	sshdb_push_log(4,'mELE',$db.'->'.$table.'->'.$ele,$attr.'~>'.$change);
 	return $sshdb_msg = 40;	
 
