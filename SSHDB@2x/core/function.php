@@ -434,7 +434,8 @@ function sshdb_get_var($db,$table,$var,$attr){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'gVAL',$db.'->'.$table.'->'.$var,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(0,'gVAL',$db.'->'.$table.'->'.$var,$attr.' : '.$sshdb_get);
+	if(is_array($sshdb_get)){$sshdb_log_get='Array()';}else{$sshdb_log_get=$sshdb_get;}
+	sshdb_push_log(0,'gVAL',$db.'->'.$table.'->'.$var,$attr.' : '.$sshdb_log_get);
 	return $sshdb_msg = 20;
 }
 function sshdb_select_var($db,$table,$var){
@@ -480,7 +481,8 @@ function sshdb_get_ele($db,$table,$ele,$attr){
 	if(isset($sshdb_msg_inc)){
 	sshdb_push_log(0,'gELE',$db.'->'.$table.'->'.$ele,$sshdb_msg_inc);
 	return $sshdb_msg = $sshdb_msg_inc;}
-	sshdb_push_log(4,'gELE',$db.'->'.$table.'->'.$ele,$attr.' : '.$sshdb_get);
+	if(is_array($sshdb_get)){$sshdb_log_get='Array()';}else{$sshdb_log_get=$sshdb_get;}
+	sshdb_push_log(4,'gELE',$db.'->'.$table.'->'.$ele,$attr.' : '.$sshdb_log_get);
 	return $sshdb_msg = 20;
 }
 function sshdb_select_ele($db,$table,$ele){
