@@ -2,6 +2,7 @@
 include('../lib/set.php');
 $select=$_GET['select'];
 sshdb_list_log();
+ksort($sshdb_get['$log']['list']);
 foreach($sshdb_get['$log']['list'] as $key => $val){
 ?>
 <div id="log_list_wrap_<?=$key?>" class="log_list_wrap" alt="<?=$key?>">

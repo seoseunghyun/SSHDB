@@ -4,6 +4,7 @@ sshdb_list_log();
 $log_array = array();
 $log_array['date'] = array();
 $log_array['count'] = array();
+ksort($sshdb_get['$log']['list']);
 foreach($sshdb_get['$log']['list'] as $key => $val){array_push($log_array['date'],$key);}
 $log_date = array_splice($log_array['date'],-7,7);
 $log_date_count = count($log_date);
