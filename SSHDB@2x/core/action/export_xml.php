@@ -48,7 +48,7 @@ foreach($sshdb_print as $key => $val){
 	$xmlends = '</element>
 ';
 	}else{
-	$xmlResponse .= '	<key id="'.$keys.'">'.$vals.'</key'>
+	$xmlResponse .= '	<key id="'.$keys.'">'.$vals.'</key>
 ';
 	}
 	}
